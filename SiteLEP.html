@@ -1,0 +1,1750 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#633ed5" />
+  <meta name="description" content="LEP Sistemas — Soluções modernas em sistemas para empresas. Design profissional, organização e tecnologia para crescer com segurança." />
+  <title>LEP Sistemas — Site Institucional</title>
+
+  <style>
+    /* =========================
+       LEP Sistemas — ULTRA PREMIUM One Page (ENTERPRISE)
+       Identity colors: #633ed5 #5d46e2 #009186
+       No external libraries
+       ========================= */
+
+    :root{
+      --c1:#633ed5;
+      --c2:#5d46e2;
+      --c3:#009186;
+
+      --ink:#0b1020;
+      --muted:#5d6373;
+      --line:rgba(10, 18, 38, .10);
+
+      --r-lg:24px;
+      --r-md:18px;
+      --r-sm:14px;
+
+      --shadow-sm:0 10px 30px rgba(11,16,32,.08);
+      --shadow-md:0 16px 50px rgba(11,16,32,.10);
+      --shadow-lg:0 30px 90px rgba(11,16,32,.14);
+
+      --ease: cubic-bezier(.2,.8,.2,1);
+      --max:1180px;
+
+      --grad-main: linear-gradient(135deg, var(--c1), var(--c2) 52%, var(--c3));
+      --grad-soft: radial-gradient(900px 540px at 15% 10%, rgba(99,62,213,.16), transparent 58%),
+                   radial-gradient(860px 520px at 85% 20%, rgba(0,145,134,.14), transparent 62%),
+                   radial-gradient(700px 500px at 55% 85%, rgba(93,70,226,.12), transparent 60%);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--ink);
+      background:#fff;
+      overflow-x:hidden;
+      letter-spacing:-0.01em;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{scroll-behavior:auto}
+      *{animation:none !important; transition:none !important}
+    }
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
+    .section{position:relative; padding:96px 0}
+    @media (max-width: 900px){ .section{padding:78px 0} }
+    @media (max-width: 560px){ .section{padding:66px 0} }
+
+    /* Background */
+    .bg{
+      position:fixed; inset:0; pointer-events:none; z-index:-3;
+      background: var(--grad-soft);
+    }
+    .noise{
+      position:fixed; inset:-20%; z-index:-2; pointer-events:none; opacity:.06;
+      background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/></filter><rect width="220" height="220" filter="url(%23n)" opacity=".6"/></svg>');
+      transform:rotate(2deg);
+    }
+    .abstract{
+      position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.9;
+      background:
+        radial-gradient(700px 400px at 10% 70%, rgba(99,62,213,.10), transparent 64%),
+        radial-gradient(800px 460px at 88% 72%, rgba(0,145,134,.09), transparent 66%);
+    }
+    .abstract::before{
+      content:"";
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(to right, rgba(99,62,213,.10), transparent 55%),
+        linear-gradient(to top, rgba(0,145,134,.10), transparent 55%);
+      mask-image: radial-gradient(900px 520px at 50% 20%, #000 30%, transparent 70%);
+      opacity:.25;
+    }
+    .gridlines{
+      position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.35;
+      background:
+        linear-gradient(rgba(11,16,32,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11,16,32,.06) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: radial-gradient(800px 520px at 50% 0%, #000 22%, transparent 70%);
+    }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(255,255,255,.72);
+      border-bottom:1px solid rgba(10,18,38,.08);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 180px; user-select:none;
+    }
+    .logo{
+      width:40px; height:40px; border-radius:14px;
+      background: var(--grad-main);
+      box-shadow: 0 18px 40px rgba(99,62,213,.22);
+      position:relative; overflow:hidden; flex:0 0 auto;
+    }
+    .logo::after{
+      content:""; position:absolute; inset:-40%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.7), transparent 42%);
+      transform: rotate(12deg); opacity:.55;
+    }
+    .brand h1{margin:0; font-size:14px; line-height:1.1; font-weight:800; letter-spacing:-.02em}
+    .brand small{display:block; color:var(--muted); font-weight:600; margin-top:2px; font-size:12px}
+
+    .navlinks{
+      display:flex; gap:14px; align-items:center; justify-content:center; flex:1;
+    }
+    .navlinks a{
+      text-decoration:none; color: rgba(11,16,32,.78);
+      font-weight:800; font-size:13px;
+      padding:10px 10px; border-radius:12px;
+      transition: transform .22s var(--ease), background .22s var(--ease), color .22s var(--ease);
+    }
+    .navlinks a:hover{
+      background: rgba(99,62,213,.08);
+      color: rgba(11,16,32,.92);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta{display:flex; gap:10px; align-items:center; justify-content:flex-end; min-width: 260px}
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px; border-radius:14px;
+      border:1px solid rgba(10,18,38,.10);
+      background:#fff; color:rgba(11,16,32,.88);
+      font-weight:900; font-size:13px;
+      text-decoration:none; cursor:pointer;
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease), background .22s var(--ease), border-color .22s var(--ease);
+      box-shadow: 0 10px 30px rgba(11,16,32,.06);
+      will-change:transform;
+    }
+    .btn:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 18px 46px rgba(11,16,32,.10);
+      border-color: rgba(99,62,213,.20);
+    }
+    .btn:active{transform: translateY(0px) scale(.99)}
+    .btn .ic{width:16px;height:16px; display:inline-block}
+
+    .btn-primary{
+      border:1px solid rgba(255,255,255,.22);
+      background: linear-gradient(135deg, rgba(99,62,213,1), rgba(93,70,226,1) 55%, rgba(0,145,134,1));
+      color:#fff;
+      box-shadow: 0 18px 56px rgba(99,62,213,.28), 0 0 0 1px rgba(255,255,255,.26) inset;
+      position:relative; overflow:hidden;
+    }
+    .btn-primary::before{
+      content:""; position:absolute; inset:-60%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.75), transparent 45%);
+      transform: rotate(12deg); opacity:.45;
+      transition: opacity .22s var(--ease);
+      pointer-events:none;
+    }
+    .btn-primary:hover::before{opacity:.60}
+    .btn-primary:hover{box-shadow: 0 24px 70px rgba(99,62,213,.34), 0 0 0 1px rgba(255,255,255,.30) inset;}
+
+    .btn-ghost{
+      background: rgba(255,255,255,.70);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 12px 40px rgba(11,16,32,.08);
+    }
+
+    /* Mobile nav */
+    .burger{
+      display:none;
+      border:1px solid rgba(10,18,38,.10);
+      border-radius:14px;
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding:11px 12px;
+      box-shadow: 0 10px 28px rgba(11,16,32,.08);
+      cursor:pointer;
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+    }
+    .burger:hover{transform:translateY(-1px); box-shadow:0 16px 44px rgba(11,16,32,.10)}
+    .burger svg{width:18px;height:18px}
+    @media (max-width: 980px){
+      .navlinks{display:none}
+      .nav-cta{min-width:auto}
+      .burger{display:inline-flex; align-items:center; justify-content:center}
+    }
+    .mobile{
+      display:none;
+      border-top:1px solid rgba(10,18,38,.08);
+      padding:10px 0 14px;
+    }
+    .mobile.open{display:block}
+    .mobile .row{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between}
+    .mobile a{
+      flex:1 1 calc(50% - 10px);
+      min-width:160px;
+      text-align:center;
+      padding:12px 12px;
+      border-radius:14px;
+      text-decoration:none;
+      color:rgba(11,16,32,.84);
+      font-weight:900;
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 28px rgba(11,16,32,.06);
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease), border-color .22s var(--ease);
+    }
+    .mobile a:hover{transform:translateY(-2px); box-shadow:0 16px 44px rgba(11,16,32,.10); border-color:rgba(99,62,213,.20)}
+    .mobile .cta{flex:1 1 100%}
+
+    /* Headings */
+    .head{
+      display:flex; justify-content:space-between; align-items:flex-end;
+      gap:18px; margin-bottom: 26px;
+    }
+    .head h3{
+      margin:0;
+      font-size: 14px;
+      letter-spacing:.08em;
+      text-transform: uppercase;
+      color: rgba(11,16,32,.62);
+      font-weight: 950;
+    }
+    .head h4{
+      margin:8px 0 0;
+      font-size: clamp(26px, 2.5vw, 34px);
+      line-height:1.15;
+      letter-spacing:-.03em;
+      font-weight: 980;
+    }
+    .head .sub{
+      max-width: 52ch;
+      margin:0;
+      color: rgba(11,16,32,.62);
+      font-weight:650;
+      line-height:1.6;
+      font-size:15.5px;
+    }
+    @media (max-width: 820px){ .head{flex-direction:column; align-items:flex-start} }
+
+    /* Cards */
+    .cards{display:grid; grid-template-columns: repeat(4, 1fr); gap:16px}
+    @media (max-width: 980px){ .cards{grid-template-columns: repeat(2, 1fr)} }
+    @media (max-width: 560px){ .cards{grid-template-columns: 1fr} }
+
+    .card{
+      position:relative;
+      border-radius: var(--r-md);
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.68);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow-md);
+      padding:18px;
+      overflow:hidden;
+      transition: transform .26s var(--ease), box-shadow .26s var(--ease), border-color .26s var(--ease);
+      will-change:transform;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-60%;
+      background:
+        radial-gradient(circle at 28% 22%, rgba(99,62,213,.26), transparent 45%),
+        radial-gradient(circle at 72% 32%, rgba(0,145,134,.18), transparent 52%);
+      opacity:.35;
+      transform: rotate(8deg);
+      pointer-events:none;
+      transition: opacity .26s var(--ease);
+    }
+    .card:hover{
+      transform: translateY(-6px);
+      border-color: rgba(99,62,213,.22);
+      box-shadow: 0 28px 80px rgba(11,16,32,.14);
+    }
+    .card:hover::before{opacity:.48}
+    .card .top{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom: 12px}
+    .ic-wrap{
+      width:44px;height:44px;
+      border-radius:16px;
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(10,18,38,.10);
+      box-shadow: 0 18px 46px rgba(11,16,32,.10), 0 0 0 1px rgba(255,255,255,.35) inset;
+      display:flex; align-items:center; justify-content:center;
+      position:relative; overflow:hidden;
+    }
+    .ic-wrap::after{
+      content:""; position:absolute; inset:-70%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.70), transparent 45%);
+      transform: rotate(14deg); opacity:.55;
+      pointer-events:none;
+    }
+    .ic-wrap svg{width:20px;height:20px}
+    .card h5{margin:0 0 8px; font-size:16px; letter-spacing:-.02em; font-weight:980}
+    .card p{margin:0; color: rgba(11,16,32,.66); font-weight:650; line-height:1.6; font-size:14.5px}
+
+    /* Services */
+    .services{display:grid; grid-template-columns: 1.2fr .8fr; gap:18px; align-items:start}
+    @media (max-width: 980px){ .services{grid-template-columns: 1fr} }
+    .service-grid{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px}
+    @media (max-width: 640px){ .service-grid{grid-template-columns: 1fr} }
+    .service{
+      border-radius: var(--r-md);
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow-md);
+      padding:16px;
+      position:relative; overflow:hidden;
+      transition: transform .24s var(--ease), box-shadow .24s var(--ease), border-color .24s var(--ease);
+      display:flex; gap:12px; align-items:flex-start;
+    }
+    .service:hover{transform: translateY(-4px); border-color: rgba(0,145,134,.26); box-shadow: 0 24px 70px rgba(11,16,32,.12)}
+    .service .mark{
+      width:40px;height:40px; border-radius:16px;
+      background: var(--grad-main);
+      box-shadow: 0 18px 46px rgba(99,62,213,.22);
+      position:relative; flex:0 0 auto; overflow:hidden;
+    }
+    .service .mark::after{
+      content:""; position:absolute; inset:-60%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.70), transparent 45%);
+      transform: rotate(12deg); opacity:.55;
+    }
+    .service h6{margin:0 0 6px; font-size:15px; letter-spacing:-.02em; font-weight:980}
+    .service span{display:block; color: rgba(11,16,32,.60); font-weight:650; font-size:13.5px; line-height:1.5}
+
+    .services-aside{
+      border-radius: var(--r-lg);
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.62);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow-lg);
+      padding:20px;
+      overflow:hidden; position:relative;
+    }
+    .services-aside::before{
+      content:""; position:absolute; inset:-60%;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(99,62,213,.24), transparent 45%),
+        radial-gradient(circle at 72% 40%, rgba(0,145,134,.18), transparent 52%),
+        radial-gradient(circle at 58% 90%, rgba(93,70,226,.18), transparent 52%);
+      opacity:.38; transform: rotate(8deg); pointer-events:none;
+    }
+    .services-aside .inner{position:relative; z-index:1}
+    .services-aside h5{margin:0 0 8px; font-size:18px; letter-spacing:-.02em; font-weight:980}
+    .services-aside p{margin:0 0 14px; color: rgba(11,16,32,.66); font-weight:650; line-height:1.7; font-size:14.5px}
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .chip{
+      padding:10px 12px; border-radius:999px;
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 12px 36px rgba(11,16,32,.06);
+      font-weight:900; font-size:12.5px;
+      color: rgba(11,16,32,.74);
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .chip i{width:10px;height:10px;border-radius:99px;background: var(--grad-main); display:inline-block; box-shadow: 0 12px 30px rgba(99,62,213,.16)}
+
+    /* About */
+    .about{display:grid; grid-template-columns: 1fr 1fr; gap:18px; align-items:start}
+    @media (max-width: 980px){ .about{grid-template-columns: 1fr} }
+    .about .panel{
+      border-radius: var(--r-lg);
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.68);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow-lg);
+      padding:22px;
+      position:relative; overflow:hidden;
+    }
+    .about .panel::before{
+      content:""; position:absolute; inset:-70%;
+      background:
+        radial-gradient(circle at 22% 20%, rgba(99,62,213,.22), transparent 46%),
+        radial-gradient(circle at 78% 30%, rgba(0,145,134,.16), transparent 52%);
+      opacity:.35; transform: rotate(10deg); pointer-events:none;
+    }
+    .about .panel .inner{position:relative; z-index:1}
+    .about h5{margin:0 0 10px; font-size:20px; letter-spacing:-.03em; font-weight:980}
+    .about p{margin:0; color: rgba(11,16,32,.66); font-weight:650; line-height:1.75; font-size:15px}
+    .values{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px; margin-top:14px}
+    @media (max-width: 560px){ .values{grid-template-columns: 1fr} }
+    .value{
+      border-radius: var(--r-md);
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.72);
+      box-shadow: var(--shadow-md);
+      padding:16px;
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+      position:relative; overflow:hidden;
+    }
+    .value:hover{transform: translateY(-4px); box-shadow: 0 24px 70px rgba(11,16,32,.12)}
+    .value strong{display:block; font-size:14.5px; font-weight:980; letter-spacing:-.02em; margin-bottom:6px}
+    .value span{display:block; color: rgba(11,16,32,.62); font-weight:650; font-size:13.5px; line-height:1.55}
+
+    /* Contact */
+    .contact{display:grid; grid-template-columns: 1fr; gap:16px; align-items:start}
+    .contact-card{
+      border-radius: var(--r-lg);
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.70);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: var(--shadow-lg);
+      overflow:hidden; position:relative;
+    }
+    .contact-card::before{
+      content:""; position:absolute; inset:-70%;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(99,62,213,.26), transparent 45%),
+        radial-gradient(circle at 78% 35%, rgba(0,145,134,.18), transparent 52%),
+        radial-gradient(circle at 55% 92%, rgba(93,70,226,.18), transparent 55%);
+      opacity:.36; transform: rotate(10deg); pointer-events:none;
+    }
+    .contact-card .inner{
+      position:relative; z-index:1;
+      padding:22px;
+      display:grid; grid-template-columns: 1.1fr .9fr;
+      gap:18px; align-items:center;
+    }
+    @media (max-width: 900px){ .contact-card .inner{grid-template-columns: 1fr} }
+    .contact-info{display:grid; gap:10px}
+    .contact-title{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    .contact-title h5{margin:0; font-size:20px; letter-spacing:-.03em; font-weight:980}
+    .contact-title .mini{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:9px 10px; border-radius:999px;
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 12px 36px rgba(11,16,32,.06);
+      color: rgba(11,16,32,.70);
+      font-weight:900; font-size:12.5px;
+    }
+    .contact-title .mini .pulse{
+      width:10px;height:10px;border-radius:99px;
+      background: var(--grad-main);
+      box-shadow: 0 0 0 0 rgba(99,62,213,.22);
+      animation: pulse 2.2s var(--ease) infinite;
+    }
+    @keyframes pulse{
+      0%{ box-shadow: 0 0 0 0 rgba(99,62,213,.26) }
+      70%{ box-shadow: 0 0 0 14px rgba(99,62,213,0) }
+      100%{ box-shadow: 0 0 0 0 rgba(99,62,213,0) }
+    }
+
+    .contact-lines{display:grid; gap:10px; margin-top:10px}
+    .lineitem{
+      display:flex; align-items:center; gap:12px;
+      padding:12px;
+      border-radius: var(--r-md);
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.70);
+      box-shadow: 0 12px 36px rgba(11,16,32,.06);
+    }
+    .lineitem svg{width:18px;height:18px}
+    .lineitem b{font-weight:980; letter-spacing:-.02em; margin-right:6px}
+    .lineitem span{color: rgba(11,16,32,.68); font-weight:750; letter-spacing:-.01em}
+
+    .contact-cta{
+      border-radius: var(--r-lg);
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.62);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow-lg);
+      padding:18px;
+      position:relative; overflow:hidden;
+    }
+    .contact-cta::before{
+      content:""; position:absolute; inset:-60%;
+      background: radial-gradient(circle at 30% 20%, rgba(0,145,134,.20), transparent 48%),
+                  radial-gradient(circle at 72% 30%, rgba(99,62,213,.22), transparent 52%);
+      opacity:.32; transform: rotate(10deg); pointer-events:none;
+    }
+    .contact-cta .inner{position:relative; z-index:1}
+    .contact-cta h6{margin:0 0 8px; font-size:16px; letter-spacing:-.02em; font-weight:980}
+    .contact-cta p{margin:0 0 14px; color: rgba(11,16,32,.64); font-weight:650; line-height:1.7; font-size:14.5px}
+
+    /* Footer */
+    footer{
+      position:relative;
+      padding:56px 0 30px;
+      border-top:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.60);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      overflow:hidden;
+    }
+    footer::before{
+      content:""; position:absolute; inset:-70%;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(99,62,213,.18), transparent 45%),
+        radial-gradient(circle at 78% 30%, rgba(0,145,134,.14), transparent 52%),
+        radial-gradient(circle at 55% 92%, rgba(93,70,226,.14), transparent 55%);
+      opacity:.30; transform: rotate(8deg); pointer-events:none;
+    }
+    .foot{
+      position:relative; z-index:1;
+      display:grid; grid-template-columns: 1.2fr 1fr 1fr;
+      gap:18px; align-items:start; padding-bottom:18px;
+    }
+    @media (max-width: 980px){ .foot{grid-template-columns: 1fr 1fr} }
+    @media (max-width: 560px){ .foot{grid-template-columns: 1fr} }
+    .footcol{
+      border-radius: var(--r-lg);
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.72);
+      box-shadow: var(--shadow-md);
+      padding:18px;
+    }
+    .footcol h6{
+      margin:0 0 10px; font-size:13px; letter-spacing:.10em;
+      text-transform: uppercase; font-weight: 980; color: rgba(11,16,32,.70);
+    }
+    .footcol a{
+      display:block; text-decoration:none;
+      color: rgba(11,16,32,.72);
+      font-weight:900;
+      padding:9px 10px;
+      border-radius: 12px;
+      border:1px solid transparent;
+      transition: background .22s var(--ease), transform .22s var(--ease), border-color .22s var(--ease);
+    }
+    .footcol a:hover{
+      background: rgba(99,62,213,.08);
+      transform: translateY(-1px);
+      border-color: rgba(99,62,213,.16);
+    }
+    .footcol p{margin:0; color: rgba(11,16,32,.66); font-weight:650; line-height:1.7; font-size:14px}
+
+    .copy{
+      position:relative; z-index:1;
+      padding-top:14px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      color: rgba(11,16,32,.60);
+      font-weight:850; font-size: 13px;
+      border-top:1px solid rgba(10,18,38,.08);
+    }
+    .copy .tiny{display:flex; align-items:center; gap:10px}
+    .mini-logo{
+      width:28px;height:28px;border-radius:12px;
+      background: var(--grad-main);
+      box-shadow: 0 14px 34px rgba(99,62,213,.18);
+    }
+
+    /* Reveal */
+    .reveal{
+      opacity:0;
+      transform: translateY(14px) scale(.99);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+      will-change: opacity, transform;
+    }
+    .reveal.in{opacity:1; transform: translateY(0) scale(1)}
+
+    /* Floating WhatsApp */
+    .wa-float{
+      position:fixed; right:18px; bottom:18px; z-index:60;
+      width: 56px; height: 56px; border-radius: 18px;
+      display:flex; align-items:center; justify-content:center;
+      text-decoration:none; color:#fff;
+      background: linear-gradient(135deg, rgba(0,145,134,1), rgba(93,70,226,1));
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow: 0 22px 60px rgba(0,145,134,.28), 0 0 0 1px rgba(255,255,255,.22) inset;
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+      overflow:hidden;
+    }
+    .wa-float::before{
+      content:""; position:absolute; inset:-70%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.6), transparent 45%);
+      transform: rotate(12deg); opacity:.5; pointer-events:none;
+    }
+    .wa-float:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 28px 76px rgba(0,145,134,.34), 0 0 0 1px rgba(255,255,255,.26) inset;
+    }
+    .wa-float svg{width:22px;height:22px; position:relative; z-index:1}
+
+    /* Anchors offset */
+    .anchor{scroll-margin-top: 92px}
+    @media (max-width: 980px){ .anchor{scroll-margin-top: 106px} }
+
+    ::selection{background: rgba(99,62,213,.20)}
+
+    /* =========================
+       HERO ENTERPRISE (100% empresa grande + 3D)
+       ========================= */
+
+    .hero--enterprise{
+      padding: 88px 0 52px;
+      position:relative;
+      overflow:hidden;
+    }
+    @media (max-width: 980px){ .hero--enterprise{ padding: 66px 0 30px; } }
+
+    /* subtle geometric layer */
+    .hero-geom{
+      position:absolute;
+      inset:-2% -2% auto -2%;
+      height: 640px;
+      pointer-events:none;
+      background:
+        radial-gradient(920px 600px at 18% 26%, rgba(99,62,213,.12), transparent 62%),
+        radial-gradient(820px 560px at 92% 12%, rgba(0,145,134,.10), transparent 64%),
+        radial-gradient(720px 560px at 55% 90%, rgba(93,70,226,.10), transparent 60%);
+      mask-image: radial-gradient(920px 560px at 50% 30%, #000 42%, transparent 74%);
+      opacity:.95;
+    }
+    .hero-geom::after{
+      content:"";
+      position:absolute; inset:0;
+      background: conic-gradient(from 210deg at 60% 30%, rgba(99,62,213,.10), transparent 35%, rgba(0,145,134,.10), transparent 75%, rgba(93,70,226,.10));
+      mask-image: radial-gradient(760px 460px at 60% 30%, #000 30%, transparent 65%);
+      opacity:.30;
+    }
+
+    .hero-enterprise{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 56px;
+      align-items:center;
+    }
+    @media (max-width: 980px){
+      .hero-enterprise{ grid-template-columns: 1fr; gap: 34px; }
+    }
+
+    /* LEFT clean */
+    .hero-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 16px 50px rgba(11,16,32,.08);
+      font-weight: 950;
+      font-size: 12.5px;
+      color: rgba(11,16,32,.78);
+      letter-spacing: -.01em;
+      width: fit-content;
+    }
+    .hero-pill-dot{
+      width:10px;height:10px;border-radius:99px;
+      background: var(--grad-main);
+      box-shadow: 0 14px 36px rgba(99,62,213,.20);
+    }
+    .hero-pill-sep{width:1px;height:14px;background: rgba(11,16,32,.16); border-radius: 99px}
+    .hero-pill-muted{color: rgba(11,16,32,.58); font-weight: 900}
+
+    .hero-h1{
+      margin: 18px 0 14px;
+      font-size: clamp(40px, 4.8vw, 66px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      font-weight: 990;
+      color: var(--ink);
+    }
+    .hero-h1 .grad{
+      background: var(--grad-main);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-dot{color: rgba(11,16,32,.92)}
+
+    .hero-p{
+      margin: 0;
+      max-width: 64ch;
+      color: rgba(11,16,32,.70);
+      font-weight: 650;
+      font-size: 16.2px;
+      line-height: 1.78;
+      letter-spacing: -0.01em;
+    }
+    .hero-p strong{color: rgba(11,16,32,.90); font-weight: 980}
+
+    .hero-cta{
+      margin-top: 24px;
+      display:flex;
+      gap: 12px;
+      flex-wrap:wrap;
+    }
+
+    .hero-trust{
+      margin-top: 22px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 720px;
+    }
+    @media (max-width: 640px){ .hero-trust{ grid-template-columns: 1fr; } }
+    .trust-item{
+      display:flex; align-items:center; gap: 10px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 14px 40px rgba(11,16,32,.07);
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease), border-color .22s var(--ease);
+    }
+    .trust-item:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 24px 70px rgba(11,16,32,.12);
+      border-color: rgba(99,62,213,.18);
+    }
+    .trust-dot{
+      width:12px;height:12px;border-radius:99px;
+      background: var(--grad-main);
+      box-shadow: 0 18px 44px rgba(99,62,213,.20);
+      flex:0 0 auto;
+    }
+    .trust-item b{
+      display:block;
+      font-weight: 980;
+      letter-spacing: -.02em;
+      font-size: 13.6px;
+      color: rgba(11,16,32,.86);
+      line-height: 1.1;
+    }
+    .trust-item small{
+      display:block;
+      font-weight: 800;
+      font-size: 12.2px;
+      color: rgba(11,16,32,.58);
+      margin-top: 3px;
+    }
+
+    /* RIGHT 3D */
+    .hero-3d{
+      position:relative;
+      min-height: 460px;
+      border-radius: 28px;
+      border: 1px solid rgba(10,18,38,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.62));
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 34px 110px rgba(11,16,32,.16);
+      overflow:hidden;
+      transform: translateZ(0);
+    }
+    @media (max-width: 980px){ .hero-3d{ min-height: 410px; } }
+
+    .hero-3d-bg{
+      position:absolute; inset:-40%;
+      background:
+        radial-gradient(circle at 25% 18%, rgba(99,62,213,.26), transparent 44%),
+        radial-gradient(circle at 85% 26%, rgba(0,145,134,.18), transparent 48%),
+        radial-gradient(circle at 56% 92%, rgba(93,70,226,.18), transparent 52%),
+        linear-gradient(90deg, rgba(11,16,32,.05), transparent 22%, transparent 78%, rgba(11,16,32,.05));
+      opacity:.95;
+      transform: rotate(7deg);
+    }
+
+    .hero-3d-stage{
+      position:absolute; inset:0;
+      transform-style: preserve-3d;
+      perspective: 1200px;
+      will-change: transform;
+    }
+
+    .hero-3d-spec{
+      position:absolute; inset:-50%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.75), transparent 42%);
+      opacity:.45;
+      transform: translate3d(0,0,80px);
+      filter: blur(2px);
+      pointer-events:none;
+      mix-blend-mode: screen;
+      will-change: transform, opacity;
+    }
+
+    .hero-3d-layer{
+      position:absolute; inset:0;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .hero-3d-glass{
+      position:absolute; inset:0;
+      border-radius: 28px;
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,.45) inset,
+        0 0 0 1px rgba(99,62,213,.06);
+      pointer-events:none;
+    }
+
+    .dev3{
+      position:absolute;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    .dev3-shell{
+      position:relative;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.46);
+      background: rgba(255,255,255,.56);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow:
+        0 28px 80px rgba(11,16,32,.16),
+        0 0 0 1px rgba(99,62,213,.08) inset;
+      overflow:hidden;
+      transform: translateZ(30px);
+    }
+    .dev3-edge{
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(255,255,255,.65), rgba(255,255,255,.28));
+      opacity:.9;
+      pointer-events:none;
+    }
+    .dev3-shine{
+      position:absolute; inset:-70%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.82), transparent 46%);
+      transform: rotate(14deg) translateZ(60px);
+      opacity:.50;
+      pointer-events:none;
+    }
+
+    .dev3-screen{
+      position:absolute;
+      left:12px; top:12px; right:12px; bottom:12px;
+      border-radius: 16px;
+      background:
+        radial-gradient(420px 280px at 18% 18%, rgba(99,62,213,.28), transparent 56%),
+        radial-gradient(380px 280px at 78% 26%, rgba(0,145,134,.22), transparent 60%),
+        radial-gradient(440px 340px at 55% 86%, rgba(93,70,226,.20), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,.14));
+      border:1px solid rgba(10,18,38,.08);
+      overflow:hidden;
+      transform: translateZ(20px);
+    }
+
+    .dev3-ui{
+      position:absolute;
+      left:18px; top:18px; right:18px; bottom:18px;
+      display:grid;
+      grid-template-rows: 16px 1fr 54px;
+      gap:12px;
+      transform: translateZ(10px);
+    }
+    .dev3-top{display:flex; align-items:center; justify-content:space-between; gap:10px}
+    .dev3-dots{display:flex; gap:6px}
+    .dev3-dots span{
+      width:7px;height:7px;border-radius:99px;
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 8px 18px rgba(11,16,32,.10);
+    }
+    .dev3-pill{
+      height:10px; width:110px; border-radius:999px;
+      background: rgba(255,255,255,.36);
+      border:1px solid rgba(255,255,255,.30);
+    }
+    .dev3-grid{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
+    .dev3-card{
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.24);
+      background: rgba(255,255,255,.24);
+      box-shadow: 0 12px 28px rgba(11,16,32,.10);
+      position:relative; overflow:hidden;
+    }
+    .dev3-card::before{
+      content:""; position:absolute; inset:-60%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.55), transparent 48%);
+      transform: rotate(12deg);
+      opacity:.55;
+    }
+    .dev3-bot{display:flex; gap:10px; align-items:center; justify-content:space-between}
+    .dev3-cta{
+      height:38px; flex:1; border-radius:999px;
+      background: linear-gradient(135deg, rgba(99,62,213,.95), rgba(93,70,226,.95) 55%, rgba(0,145,134,.95));
+      box-shadow: 0 18px 50px rgba(99,62,213,.24);
+      border:1px solid rgba(255,255,255,.24);
+      position:relative; overflow:hidden;
+    }
+    .dev3-cta::after{
+      content:""; position:absolute; inset:-70%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.62), transparent 45%);
+      transform: rotate(12deg);
+      opacity:.50;
+    }
+    .dev3-ghost{
+      height:38px; width:74px; border-radius:999px;
+      background: rgba(255,255,255,.34);
+      border:1px solid rgba(255,255,255,.30);
+      box-shadow: 0 12px 28px rgba(11,16,32,.10);
+    }
+
+    .dev3-ui-mobile{grid-template-rows: 14px 1fr 40px}
+    .dev3-stack{display:grid; grid-template-columns:1fr; gap:10px}
+
+    .dev3-shadow{
+      position:absolute;
+      left: 18px; right: 18px;
+      height: 26px;
+      bottom: -14px;
+      background: radial-gradient(closest-side, rgba(11,16,32,.18), transparent 70%);
+      filter: blur(10px);
+      opacity:.55;
+      pointer-events:none;
+    }
+
+    /* sizes / positions */
+    .dev3-desktop{width: 340px; height: 230px; left: 52%; top: 15%}
+    .dev3-desktop .dev3-shell{width: 340px; height: 230px}
+
+    .dev3-mobile{width: 170px; height: 300px; left: 10%; top: 20%}
+    .dev3-mobile .dev3-shell{width: 170px; height: 300px; border-radius: 30px}
+    .dev3-mobile .dev3-screen{border-radius: 22px}
+
+    .dev3-pos{width: 210px; height: 155px; left: 56%; top: 67%}
+    .dev3-pos .dev3-shell{width: 210px; height: 155px; border-radius: 22px}
+
+    @media (max-width: 980px){
+      .dev3-desktop{left: 48%; top: 14%}
+      .dev3-mobile{left: 8%; top: 20%}
+      .dev3-pos{left: 52%; top: 68%}
+    }
+
+    @keyframes floatA { 0%,100%{ transform: translate3d(0,0,0) } 50%{ transform: translate3d(0,-12px,0)} }
+    @keyframes floatB { 0%,100%{ transform: translate3d(0,0,0) } 50%{ transform: translate3d(0,-16px,0)} }
+    @keyframes floatC { 0%,100%{ transform: translate3d(0,0,0) } 50%{ transform: translate3d(0,-10px,0)} }
+    .dev3-desktop{ animation: floatA 5.0s var(--ease) infinite; }
+    .dev3-mobile{  animation: floatB 5.6s var(--ease) infinite; }
+    .dev3-pos{     animation: floatC 4.6s var(--ease) infinite; }
+
+    /* Tech FX */
+    .hero-3d-fx{ position:absolute; inset:0; pointer-events:none; transform: translateZ(10px); }
+    .fx-orb{
+      position:absolute; width: 220px; height: 220px; border-radius: 999px;
+      filter: blur(18px); opacity:.22;
+    }
+    .fx1{ left: -50px; top: 34px; background: rgba(99,62,213,1); }
+    .fx2{ right: -70px; top: 80px; background: rgba(0,145,134,1); }
+    .fx3{ left: 35%; bottom: -90px; background: rgba(93,70,226,1); }
+    .fx-line{
+      position:absolute; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(99,62,213,.18), rgba(0,145,134,.18), transparent);
+      opacity:.55;
+    }
+    .l1{ top: 18%; transform: translateZ(15px); }
+    .l2{ top: 68%; transform: translateZ(15px); opacity:.45; }
+
+    @media (min-width: 1200px){
+      .hero-enterprise{ gap: 72px; }
+      .hero-3d{ min-height: 500px; }
+    }
+
+    /* Toast */
+    #toast{
+      position:fixed; left:50%; bottom:22px; transform:translateX(-50%) translateY(16px);
+      opacity:0; pointer-events:none; z-index:80;
+      padding:12px 14px; border-radius:16px;
+      border:1px solid rgba(10,18,38,.10);
+      background: rgba(255,255,255,.74);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 20px 60px rgba(11,16,32,.14);
+      font-weight:900; color: rgba(11,16,32,.78);
+      transition: opacity .28s var(--ease), transform .28s var(--ease);
+      max-width:min(560px, calc(100% - 24px));
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="gridlines" aria-hidden="true"></div>
+  <div class="abstract" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header>
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand" aria-label="LEP Sistemas">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>LEP Sistemas</h1>
+            <small>Soluções modernas para empresas</small>
+          </div>
+        </div>
+
+        <nav class="navlinks" aria-label="Mapa do Site">
+          <a href="#topo">Início</a>
+          <a href="#solucoes">Soluções</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#quem-somos">Quem Somos</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn btn-ghost" href="#solucoes" aria-label="Ver soluções">
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 3l9 4.5-9 4.5L3 7.5 12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M21 12l-9 4.5L3 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M21 16.5l-9 4.5-9-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            Ver soluções
+          </a>
+
+          <a class="btn btn-primary" target="_blank" rel="noopener"
+             href="https://wa.me/5565984685315?text=Olá,%20podemos%20conversar%3F"
+             aria-label="Falar no WhatsApp">
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20.2 11.6c0 4.7-4.1 8.5-9.2 8.5-1.5 0-2.9-.3-4.2-.8L3 20.7l1.2-3.3c-.9-1.4-1.4-3-1.4-4.8C2.8 7.9 6.9 4 12 4c5.1 0 8.2 3.1 8.2 7.6Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M9.4 9.2c.2-.5.4-.6.8-.6h.6c.2 0 .4 0 .6.4l.7 1.6c.1.3 0 .6-.2.8l-.4.4c-.2.2-.2.5 0 .7.5.8 1.4 1.7 2.4 2.2.2.1.5.1.7-.1l.4-.4c.2-.2.5-.3.8-.2l1.7.7c.3.1.4.4.4.6v.6c0 .4-.2.6-.6.8-.5.2-1.4.4-2.4.1-1.7-.5-3.7-2.1-4.9-3.6-1-1.2-1.7-2.9-1.2-4.6Z" fill="white" opacity=".92"/>
+              </svg>
+            </span>
+            Falar no WhatsApp
+          </a>
+
+          <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M5 7h14M5 12h14M5 17h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile" id="mobile" aria-label="Menu mobile">
+        <div class="row">
+          <a href="#topo">Início</a>
+          <a href="#solucoes">Soluções</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#quem-somos">Quem Somos</a>
+          <a href="#contato">Contato</a>
+          <a class="cta" target="_blank" rel="noopener"
+             href="https://wa.me/5565984685315?text=Olá,%20podemos%20conversar%3F">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================
+       HERO (ENTERPRISE PRO + 3D)
+       ========================= -->
+  <main id="topo" class="hero hero--enterprise anchor">
+    <div class="hero-geom" aria-hidden="true"></div>
+
+    <div class="wrap">
+      <div class="hero-enterprise">
+        <!-- LEFT -->
+        <div class="hero-left reveal">
+          <div class="hero-pill">
+            <span class="hero-pill-dot" aria-hidden="true"></span>
+            <span>LEP Sistemas</span>
+            <span class="hero-pill-sep" aria-hidden="true"></span>
+            <span class="hero-pill-muted">Soluções corporativas</span>
+          </div>
+
+          <h2 class="hero-h1">
+            Seu negócio com <span class="grad">mais</span><br />
+            <span class="grad">controle</span>, velocidade e<br />
+            resultado<span class="hero-dot">.</span>
+          </h2>
+
+          <p class="hero-p">
+            A <strong>LEP Sistemas</strong> desenvolve <strong>sistemas sob medida</strong> e também
+            <strong>modelos prontos</strong> (PDV, gestão, oficinas, restaurantes e lanchonetes),
+            com foco em <strong>visual moderno</strong>, desempenho e organização.
+            Integrações e homologações para deixar tudo redondo.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" target="_blank" rel="noopener"
+               href="https://wa.me/5565984685315?text=Olá,%20podemos%20conversar%3F">
+              <span class="ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M20.2 11.6c0 4.7-4.1 8.5-9.2 8.5-1.5 0-2.9-.3-4.2-.8L3 20.7l1.2-3.3c-.9-1.4-1.4-3-1.4-4.8C2.8 7.9 6.9 4 12 4c5.1 0 8.2 3.1 8.2 7.6Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M9.4 9.2c.2-.5.4-.6.8-.6h.6c.2 0 .4 0 .6.4l.7 1.6c.1.3 0 .6-.2.8l-.4.4c-.2.2-.2.5 0 .7.5.8 1.4 1.7 2.4 2.2.2.1.5.1.7-.1l.4-.4c.2-.2.5-.3.8-.2l1.7.7c.3.1.4.4.4.6v.6c0 .4-.2.6-.6.8-.5.2-1.4.4-2.4.1-1.7-.5-3.7-2.1-4.9-3.6-1-1.2-1.7-2.9-1.2-4.6Z" fill="white" opacity=".92"/>
+                </svg>
+              </span>
+              Falar no WhatsApp
+            </a>
+
+            <a class="btn btn-ghost" href="#solucoes">Ver soluções</a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="trust-item">
+              <span class="trust-dot" aria-hidden="true"></span>
+              <div><b>Design premium</b><small>acabamento corporativo</small></div>
+            </div>
+            <div class="trust-item">
+              <span class="trust-dot" aria-hidden="true"></span>
+              <div><b>Organização</b><small>estrutura limpa e clara</small></div>
+            </div>
+            <div class="trust-item">
+              <span class="trust-dot" aria-hidden="true"></span>
+              <div><b>Performance</b><small>rápido e responsivo</small></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT 3D -->
+        <div class="hero-right reveal" aria-label="Visual 3D (computador, celular e maquininha)">
+          <div class="hero-3d" id="hero3D">
+            <div class="hero-3d-bg" aria-hidden="true"></div>
+
+            <div class="hero-3d-stage" id="hero3DStage">
+              <div class="hero-3d-spec" id="hero3DSpec" aria-hidden="true"></div>
+
+              <div class="hero-3d-layer" id="hero3DLayer">
+                <!-- Desktop -->
+                <div class="dev3 dev3-desktop" data-depth="14" data-rot="1" aria-hidden="true">
+                  <div class="dev3-shell">
+                    <div class="dev3-shine"></div>
+                    <div class="dev3-edge"></div>
+                    <div class="dev3-screen">
+                      <div class="dev3-ui">
+                        <div class="dev3-top">
+                          <div class="dev3-dots"><span></span><span></span><span></span></div>
+                          <div class="dev3-pill"></div>
+                        </div>
+                        <div class="dev3-grid">
+                          <div class="dev3-card"></div><div class="dev3-card"></div>
+                          <div class="dev3-card"></div><div class="dev3-card"></div>
+                        </div>
+                        <div class="dev3-bot">
+                          <div class="dev3-cta"></div>
+                          <div class="dev3-ghost"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dev3-shadow" aria-hidden="true"></div>
+                </div>
+
+                <!-- Mobile -->
+                <div class="dev3 dev3-mobile" data-depth="20" data-rot="2" aria-hidden="true">
+                  <div class="dev3-shell">
+                    <div class="dev3-shine"></div>
+                    <div class="dev3-edge"></div>
+                    <div class="dev3-screen">
+                      <div class="dev3-ui dev3-ui-mobile">
+                        <div class="dev3-top">
+                          <div class="dev3-dots"><span></span><span></span><span></span></div>
+                          <div class="dev3-pill" style="width:76px;"></div>
+                        </div>
+                        <div class="dev3-stack">
+                          <div class="dev3-card"></div>
+                          <div class="dev3-card"></div>
+                          <div class="dev3-card"></div>
+                        </div>
+                        <div class="dev3-bot">
+                          <div class="dev3-cta" style="width:100%;"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dev3-shadow" aria-hidden="true"></div>
+                </div>
+
+                <!-- POS -->
+                <div class="dev3 dev3-pos" data-depth="16" data-rot="1" aria-hidden="true">
+                  <div class="dev3-shell">
+                    <div class="dev3-shine"></div>
+                    <div class="dev3-edge"></div>
+                    <div class="dev3-screen">
+                      <div class="dev3-ui" style="grid-template-rows: 14px 1fr 14px;">
+                        <div class="dev3-top">
+                          <div class="dev3-dots"><span></span><span></span><span></span></div>
+                          <div class="dev3-pill" style="width:64px;"></div>
+                        </div>
+                        <div class="dev3-stack" style="gap:10px;">
+                          <div class="dev3-card"></div>
+                          <div class="dev3-card"></div>
+                        </div>
+                        <div class="dev3-bot">
+                          <div class="dev3-ghost" style="width:100%;"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dev3-shadow" aria-hidden="true"></div>
+                </div>
+
+                <div class="hero-3d-fx" aria-hidden="true">
+                  <span class="fx-orb fx1"></span>
+                  <span class="fx-orb fx2"></span>
+                  <span class="fx-orb fx3"></span>
+                  <span class="fx-line l1"></span>
+                  <span class="fx-line l2"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-3d-glass" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SOLUÇÕES -->
+  <section id="solucoes" class="section anchor">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <h3>Soluções</h3>
+          <h4>Estrutura premium para entregar clareza, eficiência e crescimento</h4>
+        </div>
+        <p class="sub">
+          Uma experiência moderna e bem organizada — com identidade visual forte, microinterações suaves e foco total em qualidade.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article class="card reveal">
+          <div class="top">
+            <div class="ic-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M8 21h8M12 17v4" stroke="url(#g1)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4 6.5A3.5 3.5 0 0 1 7.5 3h9A3.5 3.5 0 0 1 20 6.5v6A3.5 3.5 0 0 1 16.5 16h-9A3.5 3.5 0 0 1 4 12.5v-6Z" stroke="url(#g1)" stroke-width="2"/>
+                <defs>
+                  <linearGradient id="g1" x1="2" y1="2" x2="22" y2="22">
+                    <stop stop-color="#633ed5"/><stop offset=".55" stop-color="#5d46e2"/><stop offset="1" stop-color="#009186"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <h5>Sistemas Sob Medida</h5>
+          <p>Projetos personalizados com foco em organização, usabilidade e identidade premium.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="top">
+            <div class="ic-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 7h10M7 12h10M7 17h6" stroke="url(#g2)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z" stroke="url(#g2)" stroke-width="2"/>
+                <defs>
+                  <linearGradient id="g2" x1="2" y1="2" x2="22" y2="22">
+                    <stop stop-color="#633ed5"/><stop offset=".55" stop-color="#5d46e2"/><stop offset="1" stop-color="#009186"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <h5>Sistemas Prontos (modelos)</h5>
+          <p>Modelos bem estruturados com visual moderno e base sólida para evoluir.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="top">
+            <div class="ic-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M7 12h10" stroke="url(#g3)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 7v10" stroke="url(#g3)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4.5 9.5A5 5 0 0 1 9.5 4.5h5A5 5 0 0 1 19.5 9.5v5a5 5 0 0 1-5 5h-5a5 5 0 0 1-5-5v-5Z" stroke="url(#g3)" stroke-width="2"/>
+                <defs>
+                  <linearGradient id="g3" x1="2" y1="2" x2="22" y2="22">
+                    <stop stop-color="#633ed5"/><stop offset=".55" stop-color="#5d46e2"/><stop offset="1" stop-color="#009186"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <h5>Integrações e Homologação</h5>
+          <p>Integrações estratégicas e processos com padrão profissional e confiável.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="top">
+            <div class="ic-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2l3.2 6.5L22 9.6l-5 4.8L18.2 22 12 18.7 5.8 22 7 14.4 2 9.6l6.8-1.1L12 2Z" stroke="url(#g4)" stroke-width="2" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="g4" x1="2" y1="2" x2="22" y2="22">
+                    <stop stop-color="#633ed5"/><stop offset=".55" stop-color="#5d46e2"/><stop offset="1" stop-color="#009186"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <h5>Suporte e Evolução</h5>
+          <p>Manutenção e melhorias contínuas com foco em performance e experiência.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="section anchor">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <h3>Serviços</h3>
+          <h4>Portfólio organizado para atender diferentes segmentos com excelência</h4>
+        </div>
+        <p class="sub">
+          Estrutura visual e comunicação corporativa — com grid limpo, tipografia premium e foco total em credibilidade.
+        </p>
+      </div>
+
+      <div class="services">
+        <div class="service-grid">
+          <div class="service reveal">
+            <div class="mark" aria-hidden="true"></div>
+            <div>
+              <h6>Sistema PDV (Caixa) para Pequenas e Médias Empresas</h6>
+              <span>Fluxo eficiente, interface organizada e experiência profissional.</span>
+            </div>
+          </div>
+
+          <div class="service reveal">
+            <div class="mark" aria-hidden="true"></div>
+            <div>
+              <h6>Sistema de Gestão Empresarial</h6>
+              <span>Visão estruturada para decisões rápidas e crescimento sustentável.</span>
+            </div>
+          </div>
+
+          <div class="service reveal">
+            <div class="mark" aria-hidden="true"></div>
+            <div>
+              <h6>Sistema para Oficinas e Serviços</h6>
+              <span>Organização de processos com visual moderno e operação prática.</span>
+            </div>
+          </div>
+
+          <div class="service reveal">
+            <div class="mark" aria-hidden="true"></div>
+            <div>
+              <h6>Sistema para Lanchonetes</h6>
+              <span>Estrutura clara para atendimento, pedidos e controle interno.</span>
+            </div>
+          </div>
+
+          <div class="service reveal" style="grid-column: 1 / -1;">
+            <div class="mark" aria-hidden="true"></div>
+            <div>
+              <h6>Sistema para Restaurantes</h6>
+              <span>Experiência premium com layout limpo e foco em agilidade e controle.</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="services-aside reveal">
+          <div class="inner">
+            <h5>Design que transmite confiança</h5>
+            <p>
+              Seu site e sua presença digital precisam parecer “empresa grande”.
+              Aqui, o visual é prioridade: microinterações, brilho sutil, gradientes premium e acabamento impecável.
+            </p>
+
+            <div class="chips" aria-label="Destaques de entrega">
+              <span class="chip"><i aria-hidden="true"></i>Identidade moderna</span>
+              <span class="chip"><i aria-hidden="true"></i>Arquitetura limpa</span>
+              <span class="chip"><i aria-hidden="true"></i>Alto padrão</span>
+              <span class="chip"><i aria-hidden="true"></i>Performance leve</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS -->
+  <section id="quem-somos" class="section anchor">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <h3>Quem Somos</h3>
+          <h4>Uma empresa focada em organização, modernidade e entrega de qualidade</h4>
+        </div>
+        <p class="sub">
+          Soluções com visual profissional e estrutura clara — projetadas para transmitir confiança e elevar o padrão.
+        </p>
+      </div>
+
+      <div class="about">
+        <div class="panel reveal">
+          <div class="inner">
+            <h5>LEP Sistemas</h5>
+            <p>
+              A LEP Sistemas atua com foco em construção de experiências digitais modernas e bem organizadas,
+              unindo design premium, boa arquitetura e atenção aos detalhes. O objetivo é simples:
+              entregar soluções com aparência corporativa, confiáveis e fáceis de usar.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel reveal">
+          <div class="inner">
+            <h5>Valores</h5>
+            <div class="values">
+              <div class="value">
+                <strong>Qualidade</strong>
+                <span>Acabamento premium, consistência visual e padrão profissional.</span>
+              </div>
+              <div class="value">
+                <strong>Organização</strong>
+                <span>Estrutura limpa e experiência clara em cada detalhe.</span>
+              </div>
+              <div class="value">
+                <strong>Performance</strong>
+                <span>Leve, rápido e responsivo — do desktop ao celular.</span>
+              </div>
+              <div class="value">
+                <strong>Suporte</strong>
+                <span>Acompanhamento e evolução para manter tudo sempre em alto nível.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="section anchor">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <h3>Contato</h3>
+          <h4>Vamos conversar e elevar o padrão do seu projeto</h4>
+        </div>
+        <p class="sub">
+          Atendimento direto, com mensagem pré-configurada para facilitar. Clique e fale no WhatsApp.
+        </p>
+      </div>
+
+      <div class="contact">
+        <div class="contact-card reveal">
+          <div class="inner">
+            <div class="contact-info">
+              <div class="contact-title">
+                <h5>LEP Sistemas</h5>
+                <span class="mini"><span class="pulse" aria-hidden="true"></span>Atendimento ativo</span>
+              </div>
+
+              <div class="contact-lines">
+                <div class="lineitem">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M21 16.5a3 3 0 0 1-3 3c-7.7 0-14-6.3-14-14a3 3 0 0 1 3-3h1.4a1.5 1.5 0 0 1 1.5 1.2l.6 2.8a1.5 1.5 0 0 1-.4 1.4l-1 1c1.3 2.6 3.4 4.7 6 6l1-1a1.5 1.5 0 0 1 1.4-.4l2.8.6a1.5 1.5 0 0 1 1.2 1.5V16.5Z" stroke="url(#gc)" stroke-width="2" stroke-linejoin="round"/>
+                    <defs>
+                      <linearGradient id="gc" x1="2" y1="2" x2="22" y2="22">
+                        <stop stop-color="#633ed5"/><stop offset=".55" stop-color="#5d46e2"/><stop offset="1" stop-color="#009186"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div><b>Telefone:</b> <span>65 98468-5315</span></div>
+                </div>
+
+                <div class="lineitem">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11Z" stroke="url(#gl)" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M12 10.2a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" stroke="url(#gl)" stroke-width="2"/>
+                    <defs>
+                      <linearGradient id="gl" x1="2" y1="2" x2="22" y2="22">
+                        <stop stop-color="#633ed5"/><stop offset=".55" stop-color="#5d46e2"/><stop offset="1" stop-color="#009186"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div><b>Endereço:</b> <span>Rua Amazonas</span></div>
+                </div>
+
+                <div class="lineitem">
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M3 10.5 12 4l9 6.5v9A2.5 2.5 0 0 1 18.5 22h-13A2.5 2.5 0 0 1 3 19.5v-9Z" stroke="url(#gh)" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M9.5 22v-7a2.5 2.5 0 0 1 5 0v7" stroke="url(#gh)" stroke-width="2" stroke-linecap="round"/>
+                    <defs>
+                      <linearGradient id="gh" x1="2" y1="2" x2="22" y2="22">
+                        <stop stop-color="#633ed5"/><stop offset=".55" stop-color="#5d46e2"/><stop offset="1" stop-color="#009186"/>
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                  <div><b>Cidade:</b> <span>Pontes e Lacerda - MT</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-cta">
+              <div class="inner">
+                <h6>Atendimento via WhatsApp</h6>
+                <p>
+                  Clique no botão abaixo para enviar a mensagem:
+                  <b>“Olá, podemos conversar?”</b>
+                </p>
+                <a class="btn btn-primary" target="_blank" rel="noopener"
+                   href="https://wa.me/5565984685315?text=Olá,%20podemos%20conversar%3F">
+                  <span class="ic" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path d="M20.2 11.6c0 4.7-4.1 8.5-9.2 8.5-1.5 0-2.9-.3-4.2-.8L3 20.7l1.2-3.3c-.9-1.4-1.4-3-1.4-4.8C2.8 7.9 6.9 4 12 4c5.1 0 8.2 3.1 8.2 7.6Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                      <path d="M9.4 9.2c.2-.5.4-.6.8-.6h.6c.2 0 .4 0 .6.4l.7 1.6c.1.3 0 .6-.2.8l-.4.4c-.2.2-.2.5 0 .7.5.8 1.4 1.7 2.4 2.2.2.1.5.1.7-.1l.4-.4c.2-.2.5-.3.8-.2l1.7.7c.3.1.4.4.4.6v.6c0 .4-.2.6-.6.8-.5.2-1.4.4-2.4.1-1.7-.5-3.7-2.1-4.9-3.6-1-1.2-1.7-2.9-1.2-4.6Z" fill="white" opacity=".92"/>
+                    </svg>
+                  </span>
+                  Enviar mensagem no WhatsApp
+                </a>
+                <div style="height:10px"></div>
+                <a class="btn btn-ghost" href="#topo">Voltar ao topo</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot reveal">
+        <div class="footcol">
+          <h6>Mapa do Site</h6>
+          <a href="#topo">Início</a>
+          <a href="#solucoes">Soluções</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#quem-somos">Quem Somos</a>
+          <a href="#contato">Contato</a>
+        </div>
+
+        <div class="footcol">
+          <h6>Legal</h6>
+          <a href="#topo" data-toast="Termos de Uso">Termos</a>
+          <a href="#topo" data-toast="Política de Privacidade">Privacidade</a>
+          <p style="margin-top:10px;">Conteúdo institucional com estilo corporativo premium.</p>
+        </div>
+
+        <div class="footcol">
+          <h6>Contato</h6>
+          <p><b>LEP Sistemas</b></p>
+          <p>65 98468-5315</p>
+          <p>Rua Amazonas</p>
+          <p>Pontes e Lacerda - MT</p>
+          <div style="height:10px"></div>
+          <a class="btn btn-primary" style="width:100%; justify-content:center;"
+             target="_blank" rel="noopener"
+             href="https://wa.me/5565984685315?text=Olá,%20podemos%20conversar%3F">
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="copy reveal">
+        <div class="tiny">
+          <div class="mini-logo" aria-hidden="true"></div>
+          <span>Todos os Direitos Reservados © <span id="year"></span></span>
+        </div>
+        <span style="font-weight:950; letter-spacing:-.01em;">LEP Sistemas</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-float" target="_blank" rel="noopener"
+     href="https://wa.me/5565984685315?text=Olá,%20podemos%20conversar%3F"
+     aria-label="WhatsApp (fixo)">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M20.2 11.6c0 4.7-4.1 8.5-9.2 8.5-1.5 0-2.9-.3-4.2-.8L3 20.7l1.2-3.3c-.9-1.4-1.4-3-1.4-4.8C2.8 7.9 6.9 4 12 4c5.1 0 8.2 3.1 8.2 7.6Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M9.4 9.2c.2-.5.4-.6.8-.6h.6c.2 0 .4 0 .6.4l.7 1.6c.1.3 0 .6-.2.8l-.4.4c-.2.2-.2.5 0 .7.5.8 1.4 1.7 2.4 2.2.2.1.5.1.7-.1l.4-.4c.2-.2.5-.3.8-.2l1.7.7c.3.1.4.4.4.6v.6c0 .4-.2.6-.6.8-.5.2-1.4.4-2.4.1-1.7-.5-3.7-2.1-4.9-3.6-1-1.2-1.7-2.9-1.2-4.6Z" fill="white" opacity=".92"/>
+    </svg>
+  </a>
+
+  <div id="toast" aria-live="polite"></div>
+
+  <script>
+    // Year
+    (function(){
+      var el = document.getElementById('year');
+      if(el) el.textContent = String(new Date().getFullYear());
+    })();
+
+    // Mobile menu
+    (function(){
+      var burger = document.getElementById('burger');
+      var mobile = document.getElementById('mobile');
+      if(!burger || !mobile) return;
+
+      function setOpen(open){
+        mobile.classList.toggle('open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      burger.addEventListener('click', function(){
+        setOpen(!mobile.classList.contains('open'));
+      });
+      mobile.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){ setOpen(false); });
+      });
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape') setOpen(false);
+      });
+    })();
+
+    // Reveal on scroll
+    (function(){
+      var items = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+      if(!items.length) return;
+
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+      items.forEach(function(el){ io.observe(el); });
+    })();
+
+    // Tiny toast (Legal)
+    (function(){
+      var toast = document.getElementById('toast');
+      if(!toast) return;
+
+      var timer = null;
+      function show(msg){
+        toast.textContent = msg + " — (conteúdo institucional)";
+        toast.style.opacity = "1";
+        toast.style.transform = "translateX(-50%) translateY(0)";
+        clearTimeout(timer);
+        timer = setTimeout(hide, 2200);
+      }
+      function hide(){
+        toast.style.opacity = "0";
+        toast.style.transform = "translateX(-50%) translateY(16px)";
+      }
+
+      document.querySelectorAll('[data-toast]').forEach(function(a){
+        a.addEventListener('click', function(e){
+          e.preventDefault();
+          show(a.getAttribute('data-toast') || "Legal");
+        });
+      });
+    })();
+
+    // HERO 3D Parallax / Tilt
+    (function(){
+      var box   = document.getElementById('hero3D');
+      var stage = document.getElementById('hero3DStage');
+      var layer = document.getElementById('hero3DLayer');
+      var spec  = document.getElementById('hero3DSpec');
+      if(!box || !stage || !layer || !spec) return;
+
+      var devs = Array.prototype.slice.call(layer.querySelectorAll('.dev3'));
+      var raf = null;
+
+      var target = { x:0, y:0 };
+      var cur    = { x:0, y:0 };
+
+      function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
+
+      function setSpec(px, py){
+        var tx = (px * 220);
+        var ty = (py * 180);
+        spec.style.transform = 'translate3d(' + tx + 'px,' + ty + 'px,80px)';
+        spec.style.opacity = String(0.36 + (Math.abs(px)+Math.abs(py))*0.10);
+      }
+
+      function tick(){
+        raf = null;
+
+        cur.x += (target.x - cur.x) * 0.10;
+        cur.y += (target.y - cur.y) * 0.10;
+
+        var tiltX = (-cur.y) * 8;
+        var tiltY = ( cur.x) * 10;
+        stage.style.transform = 'rotateX(' + tiltX.toFixed(3) + 'deg) rotateY(' + tiltY.toFixed(3) + 'deg)';
+
+        devs.forEach(function(d){
+          var depth = parseFloat(d.getAttribute('data-depth') || '14');
+          var rot   = parseFloat(d.getAttribute('data-rot') || '1');
+
+          var tx = cur.x * depth;
+          var ty = cur.y * depth * 0.75;
+
+          var rx = (-cur.y) * (2.2 * rot);
+          var ry = ( cur.x) * (2.6 * rot);
+
+          d.style.transform =
+            'translate3d(' + tx.toFixed(2) + 'px,' + ty.toFixed(2) + 'px,' + (depth*1.6).toFixed(2) + 'px)' +
+            ' rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg)';
+        });
+
+        setSpec(cur.x, cur.y);
+
+        if(Math.abs(target.x - cur.x) > 0.001 || Math.abs(target.y - cur.y) > 0.001){
+          raf = requestAnimationFrame(tick);
+        }
+      }
+
+      function onMove(e){
+        var r = box.getBoundingClientRect();
+        var px = ((e.clientX - r.left) / r.width) * 2 - 1;
+        var py = ((e.clientY - r.top ) / r.height) * 2 - 1;
+        target.x = clamp(px, -1, 1);
+        target.y = clamp(py, -1, 1);
+        if(raf === null) raf = requestAnimationFrame(tick);
+      }
+
+      function reset(){
+        target.x = 0;
+        target.y = 0;
+        if(raf === null) raf = requestAnimationFrame(tick);
+      }
+
+      box.addEventListener('mousemove', onMove);
+      box.addEventListener('mouseleave', reset);
+
+      var last = window.scrollY;
+      window.addEventListener('scroll', function(){
+        var dy = window.scrollY - last;
+        last = window.scrollY;
+        target.y = clamp(target.y + dy * 0.0006, -0.30, 0.30);
+        if(raf === null) raf = requestAnimationFrame(tick);
+      }, { passive:true });
+
+      reset();
+    })();
+  </script>
+</body>
+</html>
